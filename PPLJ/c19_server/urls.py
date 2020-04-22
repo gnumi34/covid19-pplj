@@ -1,7 +1,6 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from c19_server.views import FormViewSet, UserIDViewSet, UserViewSet, UserPhoneViewSet
-from rest_framework_swagger.views import get_swagger_view
 from rest_framework_extensions.routers import NestedRouterMixin
 
 
