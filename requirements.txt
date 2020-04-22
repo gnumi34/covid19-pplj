@@ -1,4 +1,4 @@
-django
+django==2.1.1
+django-filter
 djangorestframework
-django-two-factor-auth
 psycopg2
