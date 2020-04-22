@@ -25,7 +25,7 @@ SECRET_KEY = '-5peit#$9)0vg$lfuc&55w^1d6p=6jqviq#6we@#nf3(b&@m%+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pplj-dev.us-east-1.elasticbeanstalk.com', '54.163.114.6']
+ALLOWED_HOSTS = ['covid19-pplj.us-east-1.elasticbeanstalk.com', '54.145.141.145']
 
 
 # Application definition
@@ -91,10 +91,10 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'aaab0qi58lp6yn',
+            'NAME': 'aajngk64j7ss39',
             'USER': 'covid19',
             'PASSWORD': 'covid19pplj',
-            'HOST': 'aaab0qi58lp6yn.c5rqwbcqqk7f.us-east-1.rds.amazonaws.com',
+            'HOST': 'aajngk64j7ss39.c5rqwbcqqk7f.us-east-1.rds.amazonaws.com',
             'PORT': '5432',
         }
     }
