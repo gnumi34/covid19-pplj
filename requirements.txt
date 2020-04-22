@@ -1,4 +1,5 @@
 django==2.1.1
 django-filter
 djangorestframework
+drf-extensions
 psycopg2
