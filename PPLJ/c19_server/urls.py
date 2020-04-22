@@ -8,8 +8,6 @@ class NestedDefaultRouter(NestedRouterMixin, DefaultRouter):
     pass
 
 
-schema_view = get_swagger_view(title="COVID19 API")
-
 router = NestedDefaultRouter()
 user_router = router.register('users', UserPhoneViewSet, basename='userphone')
 userid_router = user_router.register('userids', UserIDViewSet, basename='userphone-userid',
@@ -20,5 +18,4 @@ router.register('owner', UserViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('documentation/', schema_view)
 ]
