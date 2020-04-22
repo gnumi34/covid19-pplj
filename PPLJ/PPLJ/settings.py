@@ -25,7 +25,7 @@ SECRET_KEY = '-5peit#$9)0vg$lfuc&55w^1d6p=6jqviq#6we@#nf3(b&@m%+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pplj-dev.us-east-1.elasticbeanstalk.com', '54.163.114.6']
 
 
 # Application definition
@@ -76,16 +76,28 @@ WSGI_APPLICATION = 'PPLJ.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'covid19',
-        'USER': 'admin',
-        'PASSWORD': 'covid19',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'aaab0qi58lp6yn',
+            'USER': 'covid19',
+            'PASSWORD': 'covid19pplj',
+            'HOST': 'aaab0qi58lp6yn.c5rqwbcqqk7f.us-east-1.rds.amazonaws.com',
+            'PORT': '5432',
+        }
+    }
 
 
 # Password validation
@@ -124,6 +136,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, "..", "www", "static")
 STATIC_URL = '/static/'
 
 REST_FRAMEWORK = {}
