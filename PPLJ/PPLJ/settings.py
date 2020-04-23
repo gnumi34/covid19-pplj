@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-5peit#$9)0vg$lfuc&55w^1d6p=6jqviq#6we@#nf3(b&@m%+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['covid19-pplj.us-east-1.elasticbeanstalk.com', '54.145.141.145']
 
